@@ -1,0 +1,41 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "DATABASE_URL",
+    "DATA_ENCRYPTION_PASSPHRASE",
+    "NEXTAUTH_SECRET",
+    "NEXTAUTH_URL",
+    "TWITCH_CLIENT_ID",
+    "TWITCH_CLIENT_SECRET",
+    "TWITCH_EVENTSUB_SECRET",
+    "TWITCH_EVENTSUB_CALLBACK",
+    "ACTION_API_SECRET",
+    "SUPER_USER_IDS",
+    "WEB_PUSH_VAPID_PRIVATE_KEY",
+    "WEB_PUSH_VAPID_SUBJECT",
+    "OPEN_WEATHER_MAP_API_KEY",
+    "OPEN_WEATHER_MAP_API_LAT",
+    "OPEN_WEATHER_MAP_API_LON",
+    "FILE_STORAGE_CDN_URL",
+    "FILE_STORAGE_ENDPOINT",
+    "FILE_STORAGE_KEY",
+    "FILE_STORAGE_REGION",
+    "FILE_STORAGE_SECRET",
+    "FILE_STORAGE_BUCKET",
+    "NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY"
+  ],
+  "pipeline": {
+    "build": {
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "persistent": true
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}
